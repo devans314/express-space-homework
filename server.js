@@ -40,6 +40,12 @@ app.get('/missions', (req, res) => {
 // SHOW Route
 // send data to 'missions/show.ejs' view
 // the view should display all the data for a single mission
+app.get('/missions/:index', (req, res) =>{
+  const context = {
+    mission: Missions[req.params.index]
+  }
+  res.render('missions/show.ejs', context)
+})
 
 
 
